@@ -1,0 +1,35 @@
+#test2:
+i=int(input('净利润：'))
+a=[100000,200000,400000,600000,1000000]
+s=[0.1,0.075,0.05,0.03,0.015,0.01]
+r=0
+for idx in range(0,5):
+    if i<a[idx]:
+        r=r+(i-a[idx])*s[idx]
+    else:
+        
+#test3:
+for i in range(2,86,2):
+    for j in range(2,86,2):
+        if i*j == 168 and i>j:
+            
+            m = (i+j)/2
+            x=m*m-268
+            print(i,j)
+            print('这个数是%d'%x)
+#test4:
+year = int(input('please input year:'))
+month = int(input('please input month:'))
+day =  int(input('please input day:'))
+s = 0
+m = [0,31,28,31,30,31,30,31,31,30,31,30,31]
+for i in range(month):
+    s=s+m[i]
+s+=day
+if (year%4==0 and year%100 != 0) or (year%400==0):
+    if month>2:
+        s+=1
+print('this is the %dth day'%s)
+
+#test5:
+
