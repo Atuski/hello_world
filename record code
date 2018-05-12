@@ -33,3 +33,18 @@ print('this is the %dth day'%s)
 
 #test5:
 
+#test6:
+def fac(x):
+    if x == 1 or x == 2:
+        return 1
+    else:
+        return fac(x-1) + fac(x-2)
+print(fac(10))
+#test7:
+a = [1,2,3]
+b = a[:]
+print('a列表是：%s'%a)
+print('b列表是：%s'%b)
+#test8:
+
+
