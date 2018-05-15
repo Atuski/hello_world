@@ -46,5 +46,31 @@ b = a[:]
 print('a列表是：%s'%a)
 print('b列表是：%s'%b)
 #test8:
+for i in range(1,10):
+    for j in range(1,i+1):
+        print('%d*%d=%d'%(i,j,i*j),end = ' ')
+    print('\n')
+#test9:
+import time
+print('a')
+time.sleep(1)
+print('b')
+#test10:
+import time
+print(time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time())))
+time.sleep(1)
+print(time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time())))
+#test11:
+def rab(n):
+    if n == 1 or n ==2:
+        return 1
+    else:
+        return rab(n - 1) + rab(n - 2)
+for i in range(1,42):
+    print('%10d'%rab(i),end = ' ')
+    if i % 5 == 0:
+        print()
+#test12:
+
 
 
