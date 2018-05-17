@@ -114,9 +114,60 @@ else:
     grade = 'C'
 print('%d is %s'%(score,grade))
 #test16:
+import datetime
+ 
+if __name__ == '__main__':
+ 
+    # 输出今日日期，格式为 dd/mm/yyyy。更多选项可以查看 strftime() 方法
+    print(datetime.date.today().strftime('%d/%m/%Y'))
+ 
+    # 创建日期对象
+    miyazakiBirthDate = datetime.date(1941, 1, 5)
+ 
+    print(miyazakiBirthDate.strftime('%d/%m/%Y'))
+ 
+    # 日期算术运算
+    miyazakiBirthNextDay = miyazakiBirthDate + datetime.timedelta(days=1)
+ 
+    print(miyazakiBirthNextDay.strftime('%d/%m/%Y'))
+ 
+    # 日期替换
+    miyazakiFirstBirthday = miyazakiBirthDate.replace(year=miyazakiBirthDate.year + 1)
+ 
+    print(miyazakiFirstBirthday.strftime('%d/%m/%Y'))
 #test17:
+import string
+s = input('please input a string :\n')
+letters = 0
+space = 0
+digit = 0
+others = 0
+i = 0
+while i < len(s):
+    c = s[i]
+    i += 1
+    if c.isalpha():
+        letters += 1
+    elif c.isspace():
+        space += 1
+    elif c.isdigit():
+        digit += 1
+    else:
+        others += 1
+print ('char = %d,space = %d,digit = %d,others = %d' % (letters,space,digit,others))
 #test18:
+def repect(m,n):
+    return int((10**m -1)/9*n)
+sum = 0
+a = int(input('a = '))
+b = int(input('n = '))
+for i in range(1,b+1):
+    sum += repect(i,b)
+s = '+'.join(str(repect(m,b)) for m in range(1,b+1))
+
+print(s,end = '= %d'%sum)
 #test19:
+
 #test20:
 def high(n):
     if n == 1:
@@ -171,7 +222,157 @@ for i in range(1,21):
     b = t#分母等于前一项分子
 print(sum)
 #test25:
+from functools import reduce
+sum = 0
+for i in range(1,21):
+    sum += reduce(lambda x, y: x * y,list(range(1,i+1)))
+print(sum)
+#test26:
+def fact(n):
+    if n == 0:
+        return 1
+    else :
+        return fact(n-1)*n
+print(fact(5))
+#test27:
+def output(s,l):
+    if l == 0:
+        return
+    print(s[l-1])
+    output(s,l-1)
+s = input('please input a string:\n')
+l = len(s)
+output(s,l)
+#test28:
+def age(n):
+    if n == 1:
+        return 10
+    else:
+        return age(n-1) + 2
+print(age(5))
+#test29: 
+n = int(input('please input a number：\n'))
+l = []
+i = 1
+while n > 10:
+    l.append(n % 10)
+    n = n // 10
+    i += 1
+l.append(n)
+print('%d位数：'%i,end = ' ')
+for each in l :
+    print(each,end = ' ')
+#test30:
+a = int(input("请输入一个数字:\n"))
+x = str(a)
+flag = True 
+for i in range(len(x)//2):
+    if x[i] != x[-i - 1]:
+        flag = False
+        break
+if flag:
+    print ("%d 是一个回文数!" % a)
+else:
+    print ("%d 不是一个回文数!" % a)
+#test31:
+letter = raw_input("please input:")
+#while letter  != 'Y':
+if letter == 'S':
+    print ('please input second letter:')
+    letter = raw_input("please input:")
+    if letter == 'a':
+        print ('Saturday')
+    elif letter  == 'u':
+        print ('Sunday')
+    else:
+        print ('data error')
+    
+elif letter == 'F':
+    print ('Friday')
+    
+elif letter == 'M':
+    print ('Monday')
+    
+elif letter == 'T':
+    print ('please input second letter')
+    letter = raw_input("please input:")
+ 
+    if letter  == 'u':
+        print ('Tuesday')
+    elif letter  == 'h':
+        print ('Thursday')
+    else:
+        print ('data error')
+        
+elif letter == 'W':
+    print ('Wednesday')
+else:
+    print ('data error')
+#test32:
+a = ['one', 'two', 'three']
+for i in a[::-1]:
+    print (i)
+#test33:
+l = list(range(7))
+s = ','.join(str(n) for n in l)
+print(s)
+#test34:
+def hello_world():
+    print ('hello world')
+ 
+def three_hellos():
+    for i in range(3):
+        hello_world()
+if __name__ == '__main__':
+    three_hellos()
+#test35:
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+print (bcolors.WARNING + "警告的颜色字体?" + bcolors.ENDC)
+#test36:
+lower = int(input("输入区间最小值: "))
+upper = int(input("输入区间最大值: "))
+for num in range(lower,upper + 1):
+    # 素数大于 1
+    if num > 1:
+        for i in range(2,num):
+            if (num % i) == 0:
+                break
+        else:
+            print(num,end = ' ')
+#test37:
 
+#test38:
 
+#test39:
+
+#test40:
+
+#test41:
+
+#test42:
+
+#test43:
+
+#test44:
+
+#test45:
+
+#test46:
+
+#test47:
+
+#test48:
+
+#test49:
+
+#test50:
 
 
