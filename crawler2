@@ -25,7 +25,7 @@ def translate(content):
     'action':'FY_BY_CLICKBUTTION',
     'typoResult':'false'}
     date = urllib.parse.urlencode(date).encode('utf-8')
-    response = urllib.request.urlopen(url,date,head)
+    response = urllib.request.urlopen(url,date)
     html = response.read().decode('utf-8')
     target = json.loads(html)['translateResult'][0][0]['tgt']
     return target
