@@ -1,0 +1,35 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Aug 10 11:22:59 2018
+
+@author: Administrator
+"""
+
+
+import urllib.request
+import urllib.parse
+import json
+def translate(content):
+    url = "http://fanyi.youdao.com/translate"
+    head={
+          'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'
+            }
+    date = {'i':content,
+    'from':'AUTO',
+    'to':'AUTO',
+    'smartresult':'dict',
+    'client':'fanyideskweb',
+    'salt':'1533871116657',
+    'sign':'f19bec4d5e18eb46364346b551e9de6b',
+    'doctype':'json',
+    'version':'2.1',
+    'keyfrom':'fanyi.web',
+    'action':'FY_BY_CLICKBUTTION',
+    'typoResult':'false'}
+    date = urllib.parse.urlencode(date).encode('utf-8')
+    res = urllib.request.Request(url,date,head)
+    response = urllib.request.urlopen(res)
+    html = response.read().decode('utf-8')
+    target = json.loads(html)['translateResult'][0][0]['tgt']
+    return target
+print(translate('大家好'))
