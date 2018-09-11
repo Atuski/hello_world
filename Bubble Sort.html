@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鱼C-冒泡排序</title>
+</head>
+<body>
+<script>
+    //定义一个排序函数
+    //冒泡排序第一个指针控制外层，整体移动
+    //从位置[0]，到倒数第二位[n.length - 1]
+    function bubbleSort(arr)
+    {
+        for(var i = 0 ; i < arr.length -1 ; i++)
+        {
+            //内层循环，基于外层循环，动态比较
+            //从位置[0]，到[j.length - i - 1]
+            //如果前一位置大于后一位，进行交换
+            for(var j = 0 ; j < arr.length - i - 1 ; j++)
+            {
+                if (arr[j] > arr[j+1])
+                {
+                    //快速交换方法
+                    arr[j] ^= arr[j+1];
+                    arr[j+1] ^= arr[j];
+                    arr[j] ^= arr[j+1];
+                }
+
+            }
+        }
+    }
+
+    //定义一个数组
+    var array = [1,5,8,77,44,33,465,2,61];
+    bubbleSort(array);
+    alert(array);
+
+</script>
+</body>
+</html>      
